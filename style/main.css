@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding : 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    color: rgba(237, 221, 83, 1);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2A7B9B;
+    user-select: none;
+    font-family:"Bangers" ;
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
+
+.container { 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 60px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+
+}
+
+.reset{
+    padding: 15px 20px;
+    color: rgba(237, 221, 83, 1);
+    width: 100%;
+    background-color:#57C785;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:hover{
+    color: #57C785;
+    background: linear-gradient(135deg, #2c3e50, #34495e)
+}
+
+.game{
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style:preserve-3d ;
+    perspective: 500px;
+}
+
+.item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-size: 4em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after{
+    content:'';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    transition:0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen{
+    transform: rotateY(0deg);
+
+}
+
+.boxOpen::after{
+    transform: rotateY(180deg);
+}
